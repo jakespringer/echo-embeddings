@@ -3,7 +3,7 @@ import torch
 
 # These are the templates for the model.
 # Tips:
-# - Always include a beginning of sentence <s> (it isn't added for you!)
+# - Always include a beginning of sentence tag <s> (it isn't added for you!)
 # - The parser will replace variables and compute embeddings on things inside of braces, 
 #   so be sure to reference variables inside of braces only (e.g. {!%%prompt%%,} will be 
 #   replaced with the prompt, and {%%text%%} will be replaced with the text)
