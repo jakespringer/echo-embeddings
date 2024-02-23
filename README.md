@@ -57,14 +57,14 @@ pooling = EchoPooling(strategy='last')
 
 Be sure to use the `jspringer/echo-mistral-7b-instruct-meantoken` checkpoint if you would like to use mean token pooling.
 
-Specify the prompt, query, and document.
+Specify the prompt, query, and document. The first element in the tuple of the query and document tells the parser that you want to use the `query` or `document` template that we specified above. You can replace it with any template label specified in the templates dictionary.
 ```python
 prompt = 'Retrieve passages that answer the question'
-query = 'What is the capital of France?'
-document = 'Paris is the capital of France.'
+query = ('query', 'What is the capital of France?')
+document = ('document', 'Paris is the capital of France.')
 ```
 
-There is no difference between symmetric (sentence similarity) and asymmetric (retrieval) embeddings, except that the prompt should instruct the model what to do. If you want to compute the sentence similarity, write a prompt such as `Retrieve semantically similar text`.
+If you want to compute the symmetric similarity (i.e., sentence similarity), encode both sentences using the query template.
 
 Now, we can query the model to extract embeddings by first parsing the query, then running the model, and then pooling,
 ```python
