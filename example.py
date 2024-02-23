@@ -22,7 +22,7 @@ templates = {
 }
 
 # Create the model
-path_to_model = 'jspringer/echo-mistral-7b-instruct'
+path_to_model = 'jspringer/echo-mistral-7b-instruct-lasttoken'
 model = EchoEmbeddingsMistral.from_pretrained(path_to_model)
 model = model.eval()
 
