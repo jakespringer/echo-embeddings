@@ -93,12 +93,10 @@ Take a look at [example.py](example.py) for a more complete example.
 If you find our paper, code, or models useful, please consider citing [Repetition Improves Language Model Embeddings](https://arxiv.org/abs/2402.15449).
 
 ```
-@misc{springer2024repetition,
-      title={Repetition Improves Language Model Embeddings}, 
-      author={Jacob Mitchell Springer and Suhas Kotha and Daniel Fried and Graham Neubig and Aditi Raghunathan},
-      year={2024},
-      eprint={2402.15449},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@article{springer2024repetition,
+  title={Repetition Improves Language Model Embeddings},
+  author={Springer, Jacob Mitchell and Kotha, Suhas and Fried, Daniel and Neubig, Graham and Raghunathan, Aditi},
+  journal={arXiv preprint arXiv:2402.15449},
+  year={2024}
 }
 ```
