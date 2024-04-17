@@ -1,8 +1,15 @@
-# Repetition Improves Language Model Embeddings
+# [Repetition Improves Language Model Embeddings](https://arxiv.org/abs/2402.15449)
 
 We present _echo embeddings_, an embedding strategy designed to address an architectural limitation of autoregressive models: that token embeddings cannot contain information from tokens that appear later in the input. Echo embeddings resolve this issue by repeating the input twice in the input to the embedding model. Our method has strong performance on MTEB and is compatible with many other methods for improving embedding models.
 
+
 ![Overview](media/overview.png)
+
+## Updates
+
+- \[April 17, 2024\]: We have released our dataset for download [here](https://drive.google.com/file/d/1YqgaJIzmBIH37XBxpRPCVzV_CLh6aOI4/view) (3.64 GB).
+- We will be releasing full training code soon.
+
 
 ## A quick demo
 To download our pretrained model on HuggingFace and generate embeddings, run the following. Ensure that HuggingFace `transformers` library is installed.
@@ -36,8 +43,8 @@ Tips:
   in the example below.
 - Example: `<s>The last-token of {this text %%text%% will be </s>} even though there
             is {!text after it.</s>}`
-- When using max_tokens, the parser will enforce that every separate `{}` has at most 
-  `max_tokens`; this means that if you have multiple braces, the `max_token`s will be
+- When using `max_tokens`, the parser will enforce that every separate `{}` has at most 
+  `max_tokens`; this means that if you have multiple braces, the `max_tokens` will be
   enforced for each set of braces separately. This is why `{</s>}` is enclosed in 
   separate braces: so that `</s>` will not be cut off if `%%text%%` exceeds the `max_tokens`.
 
@@ -87,6 +94,28 @@ cosine_sim = torch.dot(query_embedding, document_embedding) / (torch.norm(query_
 ```
 
 Take a look at [example.py](example.py) for a more complete example.
+
+
+## Training
+
+We will be releasing training code soon. For now, if you wish to replicate or build on our work, you can download our dataset from [this Google Drive link](https://drive.google.com/file/d/1YqgaJIzmBIH37XBxpRPCVzV_CLh6aOI4/view) (3.64 GB). The dataset is a collection of approximately 1.5M training examples and mined hard negatives from the following datasets:
+- ELI5 (sample ratio 0.1)
+- HotpotQA
+- FEVER 
+- MIRACL
+- MS-MARCO passage ranking (sample ratio 0.5)
+- MS-MARCO document ranking (sample ratio 0.2)
+- NQ
+- SNLI + MNLI
+- SQuAD
+- TriviaQA
+- Quora Duplicate Questions (sample ratio 0.1)
+- Mr. TyDi
+- DuReader
+- T2Ranking (sample ratio 0.5)
+
+Please refer to our paper for additional details and citations.
+
 
 ## Citation
 
