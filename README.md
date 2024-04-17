@@ -12,7 +12,7 @@ We present _echo embeddings_, an embedding strategy designed to address an archi
 
 
 ## A quick demo
-To download our pretrained model on HuggingFace and generate embeddings, run the following. Ensure that HuggingFace `transformers` library is installed.
+To download our pretrained model on Hugging Face and generate embeddings, run the following. Ensure that Hugging Face `transformers` library is installed.
 ```bash
 git clone https://github.com/jakespringer/echo-embeddings.git
 cd echo-embeddings
